@@ -1,21 +1,8 @@
-FROM ubuntu:latest
+FROM fedora:latest
 MAINTAINER Chris Jones "chris.jones@lambdastack.io"
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update && \
-    apt-get install \
-       git \
-       ca-certificates \
-       curl \
-       gcc \
-       libc6-dev \
-       openssl \
-       libssl-dev \
-       pkg-config \
-       -qqy \
-       --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
+RUN dnf -y update && dnf clean all
+RUN dnf -y install git gcc curl openssl openssl-devel ca-certificates tar && dnf clean all
 
 ENV RUST_ARCHIVE=rust-1.14.0-x86_64-unknown-linux-gnu.tar.gz
 ENV RUST_DOWNLOAD_URL=https://static.rust-lang.org/dist/$RUST_ARCHIVE
