@@ -1,4 +1,4 @@
-## Docker Contains for Rust
+## Docker Containers for Rust
 Installing Rust on VMs such as VirtualBox is good and works well. However, for quick builds for your Rust environment in a different OS than your default OS (i.e, OSX), the following are available:
 
 rust-ubuntu
