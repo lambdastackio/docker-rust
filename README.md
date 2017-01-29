@@ -24,6 +24,10 @@ CentOS (RHEL):
 ```
 docker run -it --rm -p 8000:8000 -v $(pwd):/source lambdastack/rust-centos bash
 ```
+
+RHEL:
+See the Dockerfile in /rhel/Dockerfile. Restrictions exists for RHEL.
+
 ---
 
 *Note: The -p 8000:8000 is optional. Shown above to show how to map port 8000 in your host to port 8000 in the docker container. If your app does not accept TCP/IP connections like a web server then just ignore it.*
